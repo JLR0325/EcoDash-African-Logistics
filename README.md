@@ -1,10 +1,10 @@
 # EcoDash: Village Delivery Run
 
-EcoDash is a small browser game built with HTML, CSS, and JavaScript. You drive an electric delivery vehicle through a stylised village, deliver parcels to homes, avoid hazards, and manage your battery while the grid experiences occasional outages.
+EcoDash is a small browser game built with HTML, CSS, and JavaScript. The player drives an electric delivery vehicle through a South African village, delivering parcels to homes, avoiding hazards, and managing your battery whith occasional loadh-shedding outages.
 
 ## Overview
 
-This project is a lightweight canvas-based game where the player:
+This project is a canvas-based game where the player:
 
 - drives around a village map
 - collects and delivers packages
@@ -14,12 +14,12 @@ This project is a lightweight canvas-based game where the player:
 
 ## Features
 
-- top-down driving gameplay using keyboard or on-screen controls
-- dynamic mission system with multiple delivery points
+- top-down driving gameplay using keyboard
+- multiple delivery points
 - battery drain and automatic charging mechanic
 - load-shedding / outage events that temporarily disable charging stations
-- score tracking and best score saving in local storage
-- responsive UI with overlays, mission HUD, and touch controls
+- game management system / score tracking and best score saving in local storage
+- responsive UI with overlays and mission HUD
 
 ## Controls
 
@@ -28,13 +28,13 @@ This project is a lightweight canvas-based game where the player:
 - P or Escape: pause the game
 - Mouse/touch: use the on-screen buttons provided in the interface
 
-## Objective
+## Objective and how to play
 
-Deliver all four packages to the assigned homes while keeping the battery alive. If the battery reaches zero, the run ends. You can recharge at the charge station, but the station may be offline during load-shedding periods.
+Deliver all four packages to the assigned homes while keeping the vehicle battery alive and avoiding obstacles. If the battery reaches zero, the run ends. You can recharge at the charge station, but the station may be offline during load-shedding periods.
 
 ## How to Run
 
-Because this is a static web project, you can run it in either of these ways:
-
-1. Open index.html directly in a browser, or
-2. Serve the project locally using a simple web server, for example:
+1. Download the ZIP folder off of github
+2. Extract the folder
+3. Open index.html using your preffered browser
+4. You're ready to run the simulation!
