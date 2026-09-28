@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#17241e" />
+    <title>EcoDash | Village delivery run</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="game.js" defer></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="EcoDash home">
+          <span
+            ><strong>EcoDash</strong><small>VILLAGE DELIVERY RUN</small></span
+          >
+        </a>
+        <button
+          class="sound-button"
+          id="soundButton"
+          type="button"
+          aria-pressed="true"
+          aria-label="Turn sound off"
+          title="Toggle sound effects"
+        >
+          SOUND ON
+        </button>
+
+        <button
+          class="icon-button"
+          id="pauseButton"
+          type="button"
+          aria-label="Pause game"
+          title="Pause (P)"
+        >
+          Ⅱ
+        </button>
+      </header>
+
+      <section class="dashboard" aria-label="Run statistics">
+        <div class="stat-cell battery-cell">
+          <div class="stat-label">
+            BATTERY <span id="chargeStatus" class="status-chip">READY</span>
+          </div>
+          <div class="battery-line">
+            <div class="battery-track"><span id="batteryFill"></span></div>
+            <strong id="batteryValue">100%</strong>
+          </div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">DISTANCE</div>
+          <strong class="stat-value"
+            ><span id="distanceValue">0.0</span><small> km</small></strong
+          >
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">PACKAGES LEFT</div>
+          <strong class="stat-value"
+            ><span id="deliveryValue">4</span><small> / 4</small></strong
+          >
+        </div>
+        <div class="stat-cell">
+          <div class="stat-label">ECO EFFICIENCY</div>
+          <strong class="stat-value"
+            ><span id="efficiencyValue">100</span><small> / 100</small></strong
+          >
+        </div>
+        <div class="stat-cell score-cell">
+          <div class="stat-label">BEST RUN</div>
+          <strong class="stat-value"
+            ><span id="bestValue">0</span><small> pts</small></strong
+          >
+        </div>
+      </section>
+
+      <section class="play-area" aria-label="EcoDash game">
+        <canvas
+          id="gameCanvas"
+          width="1000"
+          height="620"
+          aria-label="Top-down village driving game"
+        ></canvas>
+        <div class="touch-controls" aria-label="Driving controls">
+          <div class="touch-pad">
+            <button
+              type="button"
+              data-key="ArrowUp"
+              class="touch-up"
+              aria-label="Accelerate"
+            >
+              ↑
+            </button>
+            <button
+              type="button"
+              data-key="ArrowLeft"
+              class="touch-left"
+              aria-label="Steer left"
+            >
+              ←
+            </button>
+            <button
+              type="button"
+              data-key="ArrowDown"
+              class="touch-down"
+              aria-label="Reverse"
+            >
+              ↓
+            </button>
+            <button
+              type="button"
+              data-key="ArrowRight"
+              class="touch-right"
+              aria-label="Steer right"
+            >
+              →
+            </button>
+          </div>
+          <button type="button" data-key="e" class="touch-interact">
+            DELIVER / CHARGE
+          </button>
+        </div>
+        <div class="mission-bar">
+          <div class="mission-copy">
+            <span class="mission-icon" aria-hidden="true">↗</span>
+            <div>
+              <small>NEXT DELIVERY</small
+              ><strong id="missionText">Collect your first parcel</strong>
+            </div>
+          </div>
+          <div class="interaction-hint" id="interactionHint">
+            WASD / arrows to drive <kbd>E</kbd> interact
+          </div>
+        </div>
+        <div class="overlay" id="gameOverlay">
+          <div class="overlay-panel">
+            <div class="overlay-kicker" id="overlayKicker" hidden></div>
+            <h1 id="overlayTitle">Deliver the<br /><em>difference.</em></h1>
+            <p id="overlayMessage">
+              Four packages are on board. Deliver each one to a village home,
+              avoid the rough patches, and recharge when you need to.
+            </p>
+            <div class="final-score" id="finalScore" hidden>
+              <span>FINAL SCORE</span>
+              <strong id="finalScoreValue">0</strong>
+            </div>
+            <button class="primary-button" id="overlayButton" type="button">
+              <span>Start delivery run</span>
+            </button>
+            <div class="overlay-foot" id="overlayFoot">
+              <span>WASD / ARROWS</span><span>DRIVE</span><i></i><span>E</span
+              ><span>DELIVER / CHARGE</span>
+            </div>
+          </div>
+        </div>
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+      </section>
+
+      <footer class="bottomline">
+        <div class="load-status">
+          <span class="load-icon" aria-hidden="true">ϟ</span
+          ><span id="loadText">GRID: STABLE</span
+          ><span class="load-track"><i id="loadProgress"></i></span>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
